@@ -1,0 +1,33 @@
+@startuml
+left to right direction
+title 図4-2 コンテキストダイアグラム
+actor 経営者 as A1
+rectangle システムに直接関わる人 {
+    actor 物流 as A2
+    actor 営業 as A3
+    actor 顧客 as A4
+    actor システム部門 as A5
+    actor オーダー部門 as A6
+    usecase 商品販売サイト as U1
+    component 決済システム as C1
+    component 入荷システム as C2
+    component 出荷システム as C3
+    note as N
+        ＜目的＞
+        輸入した商品をタイムリーに紹介し直接販売する。
+        顧客と直接繋がることで商品に対する顧客の声を
+        ダイレクトに把握し商品開発につなげる。
+    end note
+    A4 -left- U1
+    A3 -- U1
+    A2 -- U1
+    A5 -right- U1
+    A6 -right- U1
+    U1 -- C1
+    U1 -- C2
+    U1 -- C3
+    U1 .[hidden]. N
+}
+A1 -- A2
+A1 -- A3
+@enduml

@@ -1,0 +1,41 @@
+@startuml
+title 図4-11 オーダー業務&ユースケース図 (UC描画できない)
+|顧客|
+start
+:商品購入;
+note left: (商品を説明する)
+note left: (商品を受注する)
+fork
+    :メール確認;
+|オーダー担当|
+fork again
+    :オーダー確認;
+    note right: (オーダーを照会する)
+    :入金確認;
+    note right: (<<決済システム>>\n入金を確認する)
+end fork
+while (入金額の差異) is (差異がある)
+    :入金額の差異の解消;
+    if (オーダー接続) is (キャンセル) then
+        :オーダー取り消し;
+        note right: (オーダーを取り消す)
+        stop
+    else (入金額と請求額の差異がある)
+    endif
+endwhile (入金額と請求額が一致)
+:出荷指示;
+note left: <<出荷システム>>\n出荷を指示する
+fork
+|顧客|
+:オーダー状況の確認;
+fork again
+|物流|
+:出荷業務;
+note right: (オーダーを照会する)
+:出荷完了指示;
+|オーダー担当|
+:出荷完了メール通知待ち;
+:オーダー完了登録;
+endfork
+stop
+@enduml

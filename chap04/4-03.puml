@@ -1,0 +1,60 @@
+@startuml
+left to right direction
+title 図4-3 要求ダイアグラム
+actor システム部門 as A1
+actor 物流 as A2
+actor 経営者 as A3
+actor 営業 as A4
+note as N1
+    営業としてはオーダーそのものは
+    顧客に直接ウェブブラウザから入力
+    して欲しいと願ってる
+end note
+note as N2
+    営業はオーダー作業よりも分析的な
+    仕事にシフトしたいと考えている
+end note
+note as N3
+    商品の特性と売れた時期、売れた場所
+    を管理したいと考えている
+end note
+note as N4
+    売れた時期は月単位で管理したい
+end note
+note as N5
+    売れた場所は関東圏を中心に
+    直感的に理解できるようにマップ上に
+    売れた商品を表示して欲しい
+end note
+note as N6
+    多様な顧客のニーズに沿えるように
+    入金手段はなるべくいろいろなもの
+    を利用したいと考えている
+end note
+note as N7
+    営業にはオーダー作業より戦略的な
+    商品管理の仕事にシフトしてもらいたい
+    と考えている。オーダー処理そのものは
+    新たにオーダー部門を用意しそこに集約する
+end note
+note as N8
+    物流は既存の入庫、出庫システムとの連携を
+    望んでいる
+end note
+note as N9
+    システム部門は今後の保守と使い勝手を考え
+    使用する技術は統一したいと考えている
+end note
+A4 .. N1
+A4 .. N2
+A4 .. N3
+A4 .. N4
+A4 .. N5
+A4 .. N6
+A3 .. N7
+A2 .. N8
+A1 .. N9
+N1 -[hidden]- A3
+N3 -[hidden]- A2
+N5 -[hidden]-  A1
+@enduml

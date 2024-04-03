@@ -24,18 +24,21 @@ while (入金額の差異) is (差異がある)
     endif
 endwhile (入金額と請求額が一致)
 :出荷指示;
-note left: <<出荷システム>>\n出荷を指示する
+note left: (<<出荷システム>>\n出荷を指示する)
 fork
 |顧客|
 :オーダー状況の確認;
+note left: (<<出荷システム>>\nオーダー状況を確認する)
 fork again
 |物流|
 :出荷業務;
 note right: (オーダーを照会する)
 :出荷完了指示;
+note : (<<出荷システム>>\n出荷を完了する)
 |オーダー担当|
 :出荷完了メール通知待ち;
 :オーダー完了登録;
+note right: (オーダーを完了する)
 endfork
 stop
 @enduml

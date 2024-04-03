@@ -1,0 +1,41 @@
+@startuml
+title 図4-13 ユースケースダイアグラム
+left to right direction
+actor 物流 as A1
+actor オーダー部門 as A2
+actor 営業 as A3
+actor 顧客 as A4
+usecase "<<入荷システム>>\n商品を発注する" as U9
+usecase "<<入荷システム>>\n入荷商品を登録する" as U10
+usecase "<<出荷システム>>\n出荷を完了する" as U11
+usecase "<<出荷システム>>\nオーダー状況を確認する" as U12
+usecase "<<決済システム>>\n入金を確認する" as U13
+usecase "<<出荷システム>>\n出荷を指示する" as U14
+A3 -right- U9
+A1 -left- U9
+A1 -up- U10
+A1 -right- U11
+A4 -right- U12
+A2 -down- U13
+A2 -right- U14
+rectangle 商品販売サイト {
+    usecase 商品を登録する as U1
+    usecase 販売状況を照会する as U2
+    usecase 商品を説明する as U3
+    usecase 商品を受注する as U4
+    usecase オーダーを取り消す as U5
+    usecase オーダーを完了する as U6
+    usecase オーダーを照会する as U7
+    usecase 入金額を補正する as U8
+    A3 -- U1
+    A3 -- U2
+    U3 -- A4
+    U4 -- A4
+    U5 -- A2
+    U6 -- A2
+    U7 -- A2
+    U8 -- A2
+    A1 -- U7: 新規受注を確認する
+}
+
+@enduml

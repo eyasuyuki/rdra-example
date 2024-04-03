@@ -1,12 +1,14 @@
 @startuml
-title 図4-6 入荷業務 (actorが描画できない)
+title 図4-12 入荷業務&ユースケース (UCが描画できない)
 start
 :発注処理;
+note left: (<<入荷システム>>\n商品を発注する)
 note left: ○+< 営業: 新規商品の発注
 note left: ○+< 物流: 在庫切れ、在庫補充の発注
 :入荷商品の確認;
 note left: ○+< 物流
 :入荷処理;
 note left: ○+< 物流
+note left: (<<入荷システム>>\n入荷を登録する)
 stop
 @enduml

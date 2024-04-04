@@ -1,0 +1,35 @@
+@startuml
+title 図5-4 機能要求を洗い出す
+actor 作業者 as A1
+actor アナリスト as A2
+actor プロジェクトリーダー as A3
+actor 担当者 as A4
+note "要求をレビューするための\nポイントを示して欲しい" as N1
+note "各ダイアグラム毎に\n状況を把握したい" as N2
+note "モデルの整合性を\nチェックしたい" as N3
+note "要件定義のための\n各ダイアグラムの役割を\nすぐに参照できるようにして欲しい" as N4
+note "要件定義の\n全体構造が分かること" as N5
+note "要件定義のための\n各ダイアグラムの役割を\nすぐに参照できること" as N6
+note "要件定義で満たしておく\nべきことが示されること" as N7
+note "定義しているモデル間の\n関係にもとずいてモデルの\n整合性をチェックできること" as N8
+note "チェックした結果の\n評価方法を示すこと" as N9
+note "各々のモデルの種類毎に\n全体を表す一覧情報を用意し、\nどこまでが出来ているか\n分かるようにすること" as N10
+N5 .. N6
+N6 .. N4
+N5 .. N7
+N7 .. N1
+A1 <|--- A2
+A1 <|-- A3
+A1 <|--- A4
+A4 -[hidden]right- A2
+A2 -[hidden]right- A3
+A3 .right. N1
+N1 .right. A2
+A3 .down. N2
+A2 .down. N3
+A4 .down. N4
+N3 .. N8
+N3 .. N9
+N8 .right. N9
+N2 .. N10
+@enduml

@@ -1,0 +1,20 @@
+@startuml
+title 図5-2 コンテキストモデルを合意する
+rectangle システムに直接関わる人 {
+    actor 作業者 as A1
+    actor アナリスト as A2
+    note bottom: 担当者に対して分析のための\n作業指示を行う。要件決定\nの最終権限をもつ。要件の\n品質を維持する責任がある
+    actor プロジェクトリーダー as A3
+    note right: プロジェクトの方向性を\n示し、スケジュールを\n管理する
+    actor 担当者 as A4
+    usecase 要件モデルチェックシステム as U1
+    note top: 作成したモデルの内容をチェックし\n不整合と思われる部分を警告する\nこのシステムを使ってモデル作成\n作業の制度が上がること
+}
+component "<<ファイル>>\nUMLツール" as C1
+A1 <|--- A2
+A1 <|-- A3
+A1 <|--- A4
+A2 -right- U1
+U1 -right- A4
+U1 -- C1
+@enduml

@@ -11,14 +11,14 @@ usecase "<<入荷システム>>\n商品を発注する" as U3
 usecase 販売状況を照会する as U4
 usecase 商品を登録する as U5
 usecase 商品を説明する as U6
-note "オーダー取り消し" as N1
-note "受注照会" as N2
-note "発注登録" as N3
-note "販売状況照会" as N4
-note "商品登録" as N5
-note "決済情報登録" as N6
-note "カート処理" as N7
-note "商品説明" as N8
+rectangle "オーダー取り消し" as N1
+rectangle "受注照会" as N2
+rectangle "発注登録" as N3
+rectangle "販売状況照会" as N4
+rectangle "商品登録" as N5
+rectangle "決済情報登録" as N6
+rectangle "カート処理" as N7
+rectangle "商品説明" as N8
 A1 -- U1
 U1 ..> N1
 A1 --"出荷状況を確認する" U2

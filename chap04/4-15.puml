@@ -6,30 +6,50 @@ actor 営業 as A2
 actor オーダー部門 as A3
 actor 顧客 as A4
 usecase オーダーを照会する as U1
-    note left: <<画面>>\nオーダー照会\n・顧客名\n・オーダー日\n・状態
 usecase 入金額を補正する as U2
-    note left: <<画面>>\n入金補正\n・オーダーID
 usecase オーダーを取り消す as U3
-    note left: <<画面>>\nオーダー取り消し\n・オーダーID
 usecase オーダーを完了する as U4
-    note left: <<画面>>\nオーダー完了画面\n・オーダーID
 usecase 商品を受注する as U5
-    note left: <<画面>>\nカート処理\n・オーダーID
-    note left: <<画面>>\n決済処理\n・顧客名\n・住所\n・決済方法
 usecase 商品を説明する as U6
-    note left: <<画面>>\n商品説明\n・商品カテゴリ\n・商品名\n・商品説明\n・価格
 usecase 商品を登録する as U7
-    note right: <<画面>>\n商品登録画面\n・商品名\n・取引先\n・荷姿\n・発注単位\n・商品カテゴリ
 usecase 販売情報を照会する as U8
-    note right: <<画面>>\n販売状況照会\n・月\n・商品カテゴリ
+rectangle "<<画面>>\nオーダー照会\n・顧客名\n・オーダー日\n・状態" as R1
+rectangle "<<画面>>\n入金補正\n・オーダーID" as R2
+rectangle "<<画面>>\nオーダー取り消し\n・オーダーID" as R3
+rectangle "<<画面>>\nオーダー完了画面\n・オーダーID" as R4
+rectangle "<<画面>>\nカート処理\n・オーダーID" as R5
+rectangle "<<画面>>\n決済処理\n・顧客名\n・住所\n・決済方法" as R6
+rectangle "<<画面>>\n商品説明\n・商品カテゴリ\n・商品名\n・商品説明\n・価格" as R7
+rectangle "<<画面>>\n商品登録画面\n・商品名\n・取引先\n・荷姿\n・発注単位\n・商品カテゴリ" as R8
+rectangle "<<画面>>\n販売状況照会\n・月\n・商品カテゴリ" as R9
+R2 <.. U2
 U2 -- A3
+R3 <.. U3
 U3 -- A3
-A1 -- U1: 新規受注を紹介する
+R1 <.right. U1
+A1 -- U1: 新規受注を照会する
 U1 -- A3: 出荷予定を確認する
+R4 <.. U4
 U4 -- A3
+U4 -[hidden]right- U3
+U3 -[hidden]right- U2
 A2 -- U8
+A2 -[hidden]right- A1
+U8 .down.> R9
 A2 -- U7
+U7 -[hidden]right- U8
+U7 .down.> R8
+R8 -[hidden]right- R9
+R8 -[hidden]- R7
+R7 -[hidden]right- R5
+R9 -[hidden]- R5
+R9 -[hidden]right- R1
 U7 -[hidden]- U6
+R7 <.. U6
+R5 <.. U5
+R5 -[hidden]right- R6
+R6 -[hidden]right- R4
+R6 <.. U5
 U6 -- A4
 U5 -- A4
 @enduml

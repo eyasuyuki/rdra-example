@@ -2,8 +2,8 @@
 title 図4-5 商品管理業務 (actorが描画できない)
 start
 :商品販売状況を確認する;
-note right: ○+< 営業
+note right: <&person> 営業
 :商品情報を登録・変更する;
-note right: ○+< 営業
+note right: <&person> 営業
 stop
 @enduml

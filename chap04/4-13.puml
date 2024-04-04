@@ -3,9 +3,9 @@ title 図4-13 商品管理業務&ユースケース (UCが描画できない)
 start
 :商品販売状況を確認する;
 note right: (販売状況を照会する)
-note right: ○+< 営業
+note right: <&person> 営業
 :商品情報を登録・変更する;
-note right: ○+< 営業
+note right: <&person> 営業
 note right: (販売状況を登録する)
 stop
 @end

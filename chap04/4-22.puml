@@ -1,0 +1,38 @@
+@startuml
+left to right direction
+title 図4-22 ユースケース&機能ダイアグラム
+actor オーダー担当 as A1
+actor 物流 as A2
+actor 営業 as A3
+actor 顧客 as A4
+usecase オーダーを取り消す as U1
+usecase オーダーを照会する as U2
+usecase "<<入荷システム>>\n商品を発注する" as U3
+usecase 販売状況を照会する as U4
+usecase 商品を登録する as U5
+usecase 商品を説明する as U6
+note "オーダー取り消し" as N1
+note "受注照会" as N2
+note "発注登録" as N3
+note "販売状況照会" as N4
+note "商品登録" as N5
+note "決済情報登録" as N6
+note "カート処理" as N7
+note "商品説明" as N8
+A1 -- U1
+U1 ..> N1
+A1 --"出荷状況を確認する" U2
+A2 --"新規受注を確認する" U2
+U2 ..> N2
+A2 -- U3
+A3 -- U3
+U3 ..> N3
+A3 -- U4
+U4 ..> N4
+A3 -- U5
+U5 ..> N5
+A4 -- U6
+U6 ..> N6
+U6 ..> N7
+U6 ..> N8
+@enduml

@@ -1,0 +1,17 @@
+@startuml
+title 図4-26 機能複合ダイアグラム(ユースケース)
+usecase 商品を説明する as U1
+rectangle カート処理 as R1
+rectangle 決済情報登録 as R2
+rectangle "オーダー商品\n・数量" as R3
+rectangle "オーダー情報\n・オーダーID\n・オーダー日\n・数量\n・決済方法" as R4
+rectangle "送り先情報\n・送り先名\n・郵便番号\n・住所\n・電話番号" as R5
+U1 ..> R1
+R1 ..> "<<CRUD>>" R3
+R1 ..> "<<CRUD>>" R4
+U1 ..> R2
+R2 ..> "<<U>>" R4
+R2 ..> "<<CRUD>>" R5
+R3 "*"-right-* R4
+R4 o-right-"1" R5
+@enduml

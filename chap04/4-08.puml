@@ -1,10 +1,10 @@
 @startuml
 title 図4-8 概念ダイアグラム
-class 顧客
-class 販売商品
-class パッケージ商品
-class 仕入れ商品
-class 取引先
+object 顧客
+object 販売商品
+object パッケージ商品
+object 仕入れ商品
+object 取引先
 顧客 -right-"*" 販売商品: 販売する
 販売商品 -down-o パッケージ商品: パックする
 販売商品 <|-- パッケージ商品

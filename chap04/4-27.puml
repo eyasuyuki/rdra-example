@@ -1,0 +1,16 @@
+@startuml
+title 図4-27 機能複合ダイアグラム(イベント)
+rectangle "<<受信>>\n出荷完了通知" as R1
+rectangle "出荷完了記録" as R2
+rectangle "出荷指示情報\n・出荷予定日\n・入荷待ちの有無" as R3
+rectangle "オーダー情報\n・オーダーID\n・オーダー日\n・数量\n・決済方法" as R4
+rectangle "出荷情報\n・出荷番号\n・出荷日" as R5
+R1 ..> R2
+R1 ..>"受信データ" R5
+R2 ..>"<<R>>" R4
+R2 ..>"<<R>>" R3
+R3 "1"--"1" R4
+R3 <.. R5
+R2 ..>"<<C>>" R5
+R4 "1"-right-"1" R5
+@enduml

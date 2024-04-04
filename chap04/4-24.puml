@@ -1,0 +1,16 @@
+@startuml
+title 図4-24 機能ダイアグラム(ユースケース対応)
+rectangle 商品説明 as A1
+rectangle カート処理 as A2
+rectangle 決済情報登録 as A3
+rectangle 受注照会 as A4
+rectangle 商品登録 as A5
+rectangle 販売状況照会 as A6
+rectangle 発注登録 as A7
+A1 -[hidden]- A2
+A2 -[hidden]- A3
+A3 -[hidden]- A4
+A1 -[hidden]right- A5
+A2 -[hidden]right- A6
+A4 -[hidden]right- A7
+@enduml

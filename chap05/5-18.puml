@@ -1,0 +1,13 @@
+@startuml
+title 図5-18 データダイアグラム(説明用の外部ファイルとUMLツールテーブル)
+object ダイアグラム内情報 {
+    + connect or
+    + diagram
+    + diagramobject
+    + object
+    + package
+}
+object ダイアグラム説明 <<html>>
+object 要件定義説明 <<html>>
+object 整合性説明 <<html>>
+@enduml

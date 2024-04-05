@@ -1,5 +1,6 @@
 @startuml
 title 図4-25 機能ダイアグラム(イベント対応)
+skinparam rectangleRoundCorner 20
 rectangle 入金登録 as A1
 rectangle 出荷指示通知 as A2
 rectangle 出荷完了記録 as A3

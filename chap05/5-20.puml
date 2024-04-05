@@ -1,0 +1,32 @@
+@startuml
+title 図5-20 ユースケース&機能ダイアグラム
+left to right direction
+skinparam rectangleRoundCorner 20
+actor メンバー as A1
+actor アナリスト as A2
+actor プロジェクトリーダー as A3
+usecase "ダイアグラムの\n目的を説明する" as U1
+usecase "要件定義が満たす\nべき事を説明する" as U2
+usecase "整合性を確保する\nポイントを説明する" as U3
+usecase "モデル内の情報を\n表形式で参照する" as U4
+usecase "整合性を検証する" as U5
+rectangle "ダイアグラム説明表示" as R1
+rectangle "要件定義ポイント説明表示" as R2
+rectangle "整合性ポイント説明表示" as R3
+rectangle "ダイアグラム一覧表示" as R4
+rectangle "ダイアグラム内要素一覧表示" as R5
+rectangle "整合性チェック" as R6
+A1 -- U1
+A1 -- U2
+A2 -- U2
+A2 -- U3
+A2 -- U4
+A3 -- U4
+A3 -- U5
+U1 ..> R1
+U2 ..> R2
+U3 ..> R3
+U4 ..> R4
+U4 ..> R5
+U5 ..> R6
+@enduml

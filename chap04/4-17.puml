@@ -3,13 +3,13 @@ title 図4-17 イベントダイアグラム (object描画できない)
 :<<component>>\n出荷システム;
 fork
     :<<送信>>\n送信指示>
-    note left: 出荷指示\n・出荷予定日\n・オーダー情報\n・送り先情報
+    note left: 出荷指示\n- 出荷予定日\n- オーダー情報\n- 送り先情報
 fork again
     :<<受信>>\n出荷完了通知<
-    note right: 出荷情報\n・出荷番号\n・出荷日\n・オーダーID\n・数量
+    note right: 出荷情報\n- 出荷番号\n- 出荷日\n- オーダーID\n- 数量
 end fork
 stop
 :<<component>>\n決済システム;
 :<<受信>>\n入金通知<
-note right: 入金情報\n・入金日\n・入金者名\n・金額
+note right: 入金情報\n- 入金日\n- 入金者名\n- 金額
 @enduml

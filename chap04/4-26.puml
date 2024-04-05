@@ -1,5 +1,6 @@
 @startuml
 title 図4-26 機能複合ダイアグラム(ユースケース)
+skinparam rectangleRoundCorner 20
 usecase 商品を説明する as U1
 rectangle カート処理 as R1
 rectangle 決済情報登録 as R2

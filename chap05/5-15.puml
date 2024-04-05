@@ -17,10 +17,10 @@ rectangle 要件モデルチェック {
     情報提供 -[hidden]- ダイアグラム表示
 }
 rectangle ダイアグラム説明 as R1
-rectangle "ダイアグラム\n・名前\n・ステレオタイプ\n・ノート" as R2
-rectangle "ダイアグラム内情報\n・名前\n・ステレオタイプ\n・ノート" as R3
-rectangle "整合性チェックポイント\n・整合性のポイント説明\n・対応ダイアグラム名\n・整合性をチェックする相手" as R4
-rectangle "要件定義検証ポイント\n・ダイアグラム名\n・検証方法説明" as R5
+rectangle "ダイアグラム\n- 名前\n- ステレオタイプ\n- ノート" as R2
+rectangle "ダイアグラム内情報\n- 名前\n- ステレオタイプ\n- ノート" as R3
+rectangle "整合性チェックポイント\n- 整合性のポイント説明\n- 対応ダイアグラム名\n- 整合性をチェックする相手" as R4
+rectangle "要件定義検証ポイント\n- ダイアグラム名\n- 検証方法説明" as R5
 usecase "ダイアグラムの目的を\n説明する" as U1
 usecase "整合性を検証する" as U2
 usecase "整合性を確保するポイントを説明する" as U3

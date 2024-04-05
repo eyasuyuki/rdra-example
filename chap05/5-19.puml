@@ -1,0 +1,43 @@
+@startuml
+title 図5-19 データダイアグラム(UMLツールのテーブル)
+object package {
+    - id: int
+    - name: String
+    - stereotype: String
+    - note: String
+}
+object diagram {
+    - id: int
+    - name: String
+    - stereotype: String
+    - note: String
+    - package_id: int
+}
+object diagramobject {
+    - diagram_id: int
+    - object_id: int
+}
+object object {
+    - id: int
+    - name: String
+    - object_type: String
+    - stereotype: String
+    - note: String
+    - package_id: int
+}
+object connector {
+    - id: int
+    - name: String
+    - connector_type: String
+    - stereotype: String
+    - note: String
+    - start_object_id: int
+    - end_object_id: int
+}
+package "+package_id"<-right- diagram
+diagram "+diagram_id"<-- diagramobject
+diagramobject -->"+object_id" object
+object "+end_object_id"<-right-- connector
+object "+start_object_id"<-right-- connector
+package "+package_id"<-- object
+@enduml

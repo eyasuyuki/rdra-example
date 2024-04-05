@@ -1,0 +1,11 @@
+@startuml
+title 図5-21 機能ダイアグラム
+left to right direction
+skinparam rectangleRoundCorner 20
+rectangle "ダイアグラム説明表示" as R1
+rectangle "要件定義ポイント説明表示" as R2
+rectangle "整合性ポイント説明表示" as R3
+rectangle "整合性チェック" as R4
+rectangle "ダイアグラム一覧表示" as R5
+rectangle "ダイアグラム内要素一覧表示" as R6
+@enduml

@@ -1,0 +1,30 @@
+@startuml
+title 図5-21 機能ダイアグラム
+left to right direction
+skinparam agentRoundCorner 20
+agent "ダイアグラム説明表示" as A1
+agent "要件定義ポイント説明表示" as A2
+agent "整合性ポイント説明表示" as A3
+agent "整合性チェック" as A4
+agent "ダイアグラム一覧表示" as A5
+agent "ダイアグラム内要素一覧表示" as A6
+rectangle "<<html>>\nダイアグラム説明" as R1
+rectangle "<<html>>\n要件定義説明" as R2
+rectangle "<<html>>\n整合性説明" as R3
+rectangle "diagram\n- id: int\n- name: String\n- stereotype: String\n- note: String\n- package_id: int" as R4
+rectangle "diagramobject\n- diagram_id: int\n- object_id: int" as R5
+rectangle "object\n- name: String\n- object_type: String\n- stereotype: String\n- note: String\n- package_id: int" as R6
+rectangle "[ダイアグラム内情報]\n+ connect or\n+ diagram\n+ diagramobject\n+ object\n+ package" as R7
+A1 ..> "<<R>>" R1
+A2 ..> "<<R>>" R2
+A1 -[hidden]right- A2
+A3 ..> "<<R>>" R3
+A2 -[hidden]right- A3
+A6 ..> "<<R>>" R4
+R1 -[hidden]- A6
+R4 "+diagram_id" <-right- R5
+A5 ..> "<<R>>" R5
+A5 ..> "<<R>>" R6
+A4 ..> "<<R>>" R7
+R6 -[hidden]right- R7
+@enduml

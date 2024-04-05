@@ -1,5 +1,6 @@
 @startuml
 title 図4-24 機能ダイアグラム(ユースケース対応)
+skinparam rectangleRoundCorner 20
 rectangle 商品説明 as A1
 rectangle カート処理 as A2
 rectangle 決済情報登録 as A3

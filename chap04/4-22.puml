@@ -1,5 +1,6 @@
 @startuml
 left to right direction
+skinparam rectangleRoundCorner 20
 title 図4-22 ユースケース&機能ダイアグラム
 actor オーダー担当 as A1
 actor 物流 as A2

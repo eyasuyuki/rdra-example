@@ -1,6 +1,6 @@
 @startuml
 left to right direction
-title 図4-14 ユースケース&画面・帳票ダイアグラム
+title 図4-14 ユースケース&画面- 帳票ダイアグラム
 actor 物流 as A1
 actor 営業 as A2
 actor オーダー部門 as A3
@@ -13,15 +13,15 @@ usecase 商品を受注する as U5
 usecase 商品を説明する as U6
 usecase 商品を登録する as U7
 usecase 販売情報を照会する as U8
-rectangle "<<画面>>\nオーダー照会\n・顧客名\n・オーダー日\n・状態" as R1
-rectangle "<<画面>>\n入金補正\n・オーダーID" as R2
-rectangle "<<画面>>\nオーダー取り消し\n・オーダーID" as R3
-rectangle "<<画面>>\nオーダー完了画面\n・オーダーID" as R4
-rectangle "<<画面>>\nカート処理\n・オーダーID" as R5
-rectangle "<<画面>>\n決済処理\n・顧客名\n・住所\n・決済方法" as R6
-rectangle "<<画面>>\n商品説明\n・商品カテゴリ\n・商品名\n・商品説明\n・価格" as R7
-rectangle "<<画面>>\n商品登録画面\n・商品名\n・取引先\n・荷姿\n・発注単位\n・商品カテゴリ" as R8
-rectangle "<<画面>>\n販売状況照会\n・月\n・商品カテゴリ" as R9
+rectangle "<<画面>>\nオーダー照会\n- 顧客名\n- オーダー日\n- 状態" as R1
+rectangle "<<画面>>\n入金補正\n- オーダーID" as R2
+rectangle "<<画面>>\nオーダー取り消し\n- オーダーID" as R3
+rectangle "<<画面>>\nオーダー完了画面\n- オーダーID" as R4
+rectangle "<<画面>>\nカート処理\n- オーダーID" as R5
+rectangle "<<画面>>\n決済処理\n- 顧客名\n- 住所\n- 決済方法" as R6
+rectangle "<<画面>>\n商品説明\n- 商品カテゴリ\n- 商品名\n- 商品説明\n- 価格" as R7
+rectangle "<<画面>>\n商品登録画面\n- 商品名\n- 取引先\n- 荷姿\n- 発注単位\n- 商品カテゴリ" as R8
+rectangle "<<画面>>\n販売状況照会\n- 月\n- 商品カテゴリ" as R9
 R2 <.. U2
 U2 -- A3
 R3 <.. U3

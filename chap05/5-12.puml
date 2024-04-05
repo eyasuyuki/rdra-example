@@ -1,0 +1,20 @@
+@startuml
+title 図5-12 ユースケースダイアグラム(情報提供)
+left to right direction
+rectangle 情報提供 {
+    usecase "要件の定義内容を\n理解する" as U1
+    usecase "整合性を確保する\nポイントを理解する" as U2
+    usecase "ダイアグラムの目的を\n理解する" as U3
+}
+actor 担当者 as A1
+actor アナリスト as A2
+actor 作業者 as A3
+U1 -[hidden]right- U2
+U2 -[hidden]right- U3
+U1 ---- A1
+U1 -- A2
+U2 -- A2
+U3 -- A3
+A3 <|-- A2
+A3 <|-- A1
+@enduml

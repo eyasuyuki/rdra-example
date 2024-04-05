@@ -1,0 +1,47 @@
+@startuml
+title 図5-15 画面のラフスケッチ
+rectangle 要件モデルチェック {
+    rectangle Open
+    rectangle 情報提供 {
+        rectangle インデックス
+        rectangle 説明
+    }
+    rectangle ダイアグラム表示 {
+        rectangle ダイアグラム一覧
+        rectangle ダイアグラムイメージ
+        rectangle ダイアグラム内要素
+        ダイアグラム一覧 -[hidden]right- ダイアグラムイメージ
+        ダイアグラム一覧 -[hidden]- ダイアグラム内要素
+    }
+    Open -[hidden]- 情報提供
+    情報提供 -[hidden]- ダイアグラム表示
+}
+rectangle ダイアグラム説明 as R1
+rectangle "ダイアグラム\n・名前\n・ステレオタイプ\n・ノート" as R2
+rectangle "ダイアグラム内情報\n・名前\n・ステレオタイプ\n・ノート" as R3
+rectangle "整合性チェックポイント\n・整合性のポイント説明\n・対応ダイアグラム名\n・整合性をチェックする相手" as R4
+rectangle "要件定義検証ポイント\n・ダイアグラム名\n・検証方法説明" as R5
+usecase "ダイアグラムの目的を\n説明する" as U1
+usecase "整合性を検証する" as U2
+usecase "整合性を確保するポイントを説明する" as U3
+usecase "モデル内の情報を\n表形式で参照する" as U4
+usecase "要件定義が満たすべき\n事を説明する" as U5
+R1 --o R2
+R1 <.right. U1
+U1 -[hidden]right- U3
+インデックス -[hidden]right- 説明
+U1 <.. 説明
+U3 <.. 説明
+説明 .right.> U5
+U5 ..> R5
+U3 .right.> R4
+R2 o--"*" R3
+R2 <.right. ダイアグラム一覧
+R3 <.right. ダイアグラム内要素
+R3 <.right. U2
+R2 <.right. U2
+説明 ..> U2
+ダイアグラム内要素 ..> U2
+ダイアグラム内要素 ..> U4
+ダイアグラム一覧 ..> U4
+@enduml

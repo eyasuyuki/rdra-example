@@ -1,0 +1,15 @@
+@startuml
+title 図5-13 ユースケースダイアグラム（モデル分析)
+left to right direction
+rectangle "モデルを分析する" {
+    usecase 整合性を検証する as U1
+    usecase "モデル内の情報を表形式で参照する" as U2
+    U1 -[hidden]left- U2
+}
+actor プロジェクトリーダー as A1
+actor アナリスト as A2
+U1 -- A1
+U2 -- A2
+U1 -- A2
+U2 -- A1
+@enduml

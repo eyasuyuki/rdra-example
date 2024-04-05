@@ -1,0 +1,45 @@
+@startuml
+title 図5-9 RDRA概念構造
+rectangle システム価値 {
+    rectangle アクター
+    rectangle 要求
+    rectangle 外部システム
+    rectangle システム外部環境 {
+        rectangle 概念
+        rectangle 利用シーン
+        rectangle アクティビティ
+        rectangle 情報
+        rectangle システム境界 {
+            rectangle ユースケース
+            rectangle "画面・帳票"
+            rectangle システム {
+                rectangle データ
+                rectangle 機能
+                rectangle ドメインオブジェクト
+            }
+            rectangle イベント
+            rectangle 遷移上のトリガー
+            rectangle 遷移上の作用
+        }
+    }
+    アクター -right- 要求
+    要求 -[hidden]right- 外部システム
+    '概念 -[hidden]- 利用シーン
+    アクター -- 利用シーン
+    利用シーン -- ユースケース
+    アクター -- ユースケース
+    アクター -- アクティビティ
+    アクティビティ -right- 情報
+    アクティビティ -- ユースケース
+    ユースケース -right- "画面・帳票"
+    外部システム -- イベント
+    イベント -- 遷移上のトリガー: 名前を同じくして\n関連づける
+    遷移上のトリガー -- 遷移上の作用: 同一の遷移上に存在
+    ユースケース -- 機能
+    データ -right- 機能
+    機能 -- ドメインオブジェクト
+    "画面・帳票" -right- 遷移上のトリガー
+    イベント -- 機能
+    機能 -- 遷移上の作用: 名前を同じくして\n関連づける
+}
+@enduml
